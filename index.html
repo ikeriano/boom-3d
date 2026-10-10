@@ -2,22 +2,54 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>¡BOOM! 3D — Vista previa</title>
-<style>
-body{font-family:system-ui,sans-serif;background:#0a0a12;color:#eee;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}
-.card{text-align:center;padding:2rem;max-width:28rem}
-h1{font-size:1.25rem;margin:0 0 .75rem}
-p{opacity:.85;margin:0 0 1.25rem}
-a{color:#fff;background:#c62828;padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600}
-a:hover{background:#e53935}
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#08040a">
+<title>¡BOOM! 3D · remake de fans</title>
+<link rel="icon" href="assets/img/icon.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="card">
-  <h1>¡BOOM! 3D</h1>
-  <p>Versión de prueba — aún no publicada</p>
-  <a href="./preview/">Abrir vista previa</a>
+<div id="app"></div>
+<div id="loading"><div class="ld">💣</div><div>Cargando plató…</div></div>
+
+<div id="menu" class="screen hidden">
+  <img class="logo" id="menuLogo" alt="¡BOOM!">
+  <div class="tag">Remake 3D de fans</div>
+  <div class="btns">
+    <button data-mode="tv" class="gold">📺 Programa TV</button>
+    <button data-mode="train">🎯 Entrenamiento</button>
+    <button data-mode="historia">📜 Historia del programa</button>
+    <button data-mode="walk">🚶 Pasear por el plató</button>
+    <button id="btnCustom" class="custom">⚙ Personalizar</button>
+    <button id="btnQuality" class="custom">🖥 Calidad: <span id="qName">Auto</span></button>
+  </div>
+  <div class="specials"><span>Programas especiales</span><div class="spBtns" id="spBtns"></div></div>
+  <div class="menuFoot">
+    <div id="career" class="career"></div>
+    <div class="dl" id="dlLinks"><a href="BOOM3D.apk" id="dlApk">⬇ Descargar APK Android</a></div>
+    <div class="disc">Remake no oficial hecho por un fan, sin ánimo de lucro. ¡Boom! es un formato de Keshet emitido en España por Antena 3 (Gestmusic, 2014-2023) y Cuatro (Mediacrest, 2024). Sin relación oficial con el programa ni con sus cadenas. El presentador, los concursantes y el público son personajes virtuales ficticios.</div>
+  </div>
 </div>
+
+<div id="hud" class="hidden">
+  <div id="hPhase"></div>
+  <div id="timer" class="hidden">0</div>
+  <div id="score"><div class="sc red"><i></i><span class="n">ROJO</span><b>0 €</b></div><div class="sc blue"><i></i><span class="n">AZUL</span><b>0 €</b></div></div>
+</div>
+<div id="play" class="hidden"></div>
+<div id="sub" class="hidden"></div>
+<div id="chat"></div>
+<div id="overlay" class="hidden"></div>
+<div id="topBtns" class="hidden">
+  <button id="tbHome" title="Menú">⌂</button><button id="tbCam" title="Cámara">🎥</button><button id="tbWalk" title="Pasear">🚶</button><button id="tbLights" title="Luces">💡</button><button id="tbMute" title="Sonido">🔊</button>
+</div>
+<div id="skip" class="hidden">⏭</div>
+<div id="glights" class="hidden"></div>
+<div id="joy" class="hidden"><div id="knob"></div></div>
+<div id="flash"></div><div id="wflash"></div><div id="lt" class="hidden"><img id="ltLogo" alt=""><div class="bar"><b></b><i></i></div></div>
+<div id="mosca" class="hidden"><img id="moscaLogo" alt=""><span>DIRECTO</span></div>
+<div id="wm">¡BOOM! 3D · remake de fans · no oficial</div>
+<div id="qinfo"></div>
+<script src="game.js"></script>
 </body>
 </html>
