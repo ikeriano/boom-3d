@@ -162,3 +162,8 @@ html.vertical #menu .monolist { grid-template-columns: 1fr; }
 #menu .ofield label { flex: 0 0 auto; min-width: 82px; }
 /* Ajustes del menú propios de ¡BOOM! 3D */
 #menu .mver { bottom: 24px; } /* encima del rótulo «remake de fans» */
+#menu .xval { flex-wrap: wrap; gap: 4px; }
+#menu .xval label { flex-basis: 100%; }
+#menu .xval .tbtn { flex: 1 1 0; min-width: 0; padding: 5px 0; font-size: clamp(11px, 1.6vw, 13px); }
+#menu .ocustom .xnav .tbtn:first-child { flex-basis: auto; flex: 1 1 0; }
+#menu .ocustom .xnav .tbtn { flex: 1 1 0; }
